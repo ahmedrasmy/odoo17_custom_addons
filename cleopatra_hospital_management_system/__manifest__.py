@@ -26,6 +26,9 @@ Long description of module's purpose
         'views/views.xml',
         'views/templates.xml',
         'views/patient_view.xml',
+        'views/appointment_view.xml',
+        'views/medicine_view.xml',
+        'views/menus.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import patient
+from . import patient,appointment,medicine

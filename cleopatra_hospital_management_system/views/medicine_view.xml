@@ -2,12 +2,12 @@
 
 
 <!--    ######################## Start Form #########################-->
-    <record id="view_hospital_patient_form" model="ir.ui.view">
-         <field name="name" > Patient form</field>
-        <field name="model" >hospital.patient</field>
+    <record id="view_hospital_medicine_form" model="ir.ui.view">
+         <field name="name" > Medicine form</field>
+        <field name="model" >hospital.medicine</field>
         <field name="arch" type="xml">
             <form create="1" edit="1" delete="0">
-                <sheet string="Patient">
+                <sheet string="Medicine">
                     <group>
                         <group >
                                 <field name="name"/>
@@ -24,9 +24,9 @@
     </record>
 <!--    ######################## End Form #########################-->
     <!--    ######################## Start Tree #########################-->
-    <record id="view_hospital_patient_tree" model="ir.ui.view">
-         <field name="name" > patient tree</field>
-        <field name="model" >hospital.patient</field>
+    <record id="view_hospital_medicine_tree" model="ir.ui.view">
+         <field name="name" > Medicine tree</field>
+        <field name="model" >hospital.medicine</field>
         <field name="arch" type="xml">
             <tree >
                 <field name="name"/>
@@ -35,15 +35,15 @@
     </record>
         <!--    ######################## End Tree #########################-->
         <!--    ######################## Start Action #########################-->
-     <record id="action_patient_views" model="ir.actions.act_window">
-        <field name="name">Cleopatra Patient</field>
+     <record id="action_medicine_views" model="ir.actions.act_window">
+        <field name="name">Cleopatra Medicine</field>
          <field name="type">ir.actions.act_window</field>
-        <field name="res_model">hospital.patient</field>
+        <field name="res_model">hospital.medicine</field>
          <field name="view_mode">tree,form</field>
          <field name="target" >current</field>
          <field name="help" type="html" >
              <a class="o_view_nocontent_smiling_face" >
-                 create your first patient
+                 create your first medicine
              </a>
          </field>
     </record>

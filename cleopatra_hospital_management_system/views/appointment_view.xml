@@ -1,0 +1,69 @@
+<odoo>
+
+
+<!--    ######################## Start Form #########################-->
+    <record id="view_hospital_appointment_form" model="ir.ui.view">
+         <field name="name" > Appointment form</field>
+        <field name="model" >hospital.appointment</field>
+        <field name="arch" type="xml">
+            <form create="1" edit="1" delete="0">
+                 <header>
+<!--                        <button name="action_draft" type="object" class="btn-primary" string="Set To Draft" invisible="state == 'draft'"/>-->
+<!--                        <button name="action_pending" type="object" class="btn-secondary" string="Pending"  invisible="state != 'draft'"/>-->
+<!--                        <button name="action_sold" type="object" class="btn-success" string="Sold"          invisible="state != 'pending'"/>-->
+                        <field name="state" widget="statusbar" />
+                    </header>
+                <sheet string="Appointment">
+                    <group>
+                        <group >
+                                <field name="name"/>
+                                <field name="date"/>
+                                <field name="start_time"/>
+                                <field name="end_time"/>
+                                <field name="patient_id"/>
+                                <field name="medicines_ids" widget="many2many_tags"/>
+
+                        </group>
+                    </group>
+                </sheet>
+                 <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+<!--    ######################## End Form #########################-->
+    <!--    ######################## Start Tree #########################-->
+    <record id="view_hospital_appointment_tree" model="ir.ui.view">
+         <field name="name" > appointment tree</field>
+        <field name="model" >hospital.appointment</field>
+        <field name="arch" type="xml">
+            <tree >
+                <field name="name"/>
+                <field name="date"/>
+                <field name="start_time"/>
+                <field name="end_time"/>
+            </tree>
+        </field>
+    </record>
+        <!--    ######################## End Tree #########################-->
+        <!--    ######################## Start Action #########################-->
+     <record id="action_appointment_views" model="ir.actions.act_window">
+        <field name="name">Appointment</field>
+         <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.appointment</field>
+         <field name="view_mode">tree,form</field>
+         <field name="target" >current</field>
+         <field name="help" type="html" >
+             <a class="o_view_nocontent_smiling_face" >
+                 create your first appointment
+             </a>
+         </field>
+    </record>
+        <!--    ######################## End Action #########################-->
+
+
+
+</odoo>

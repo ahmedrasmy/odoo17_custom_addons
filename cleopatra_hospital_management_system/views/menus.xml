@@ -1,0 +1,43 @@
+<odoo>
+      <menuitem
+        id = 'menu_cleopatra_root'
+        name = 'Cleopatra'
+        web_icon = "cleopatra_hospital_management_system,static\src\img\icon.png"
+    />
+    <menuitem
+            id = 'menu_root_Patients'
+            name = 'Patients'
+            parent = "menu_cleopatra_root"
+
+        />
+    <menuitem
+            id = 'menu_male_patients_views'
+            name = 'Males'
+            parent = "menu_root_Patients"
+            action = "action_patient_views"
+        />
+
+    <menuitem
+            id = 'menu_root_appointments_views'
+            name = 'Appointments'
+            parent = "menu_cleopatra_root"
+        />
+    <menuitem
+            id = 'menu_previous_appointments_views'
+            name = 'Previous Appointments'
+            parent = "menu_root_appointments_views"
+            action = "action_appointment_views"
+        />
+    <menuitem
+            id = 'menu_root_Medicines'
+            name = 'Medicines'
+            parent = "menu_cleopatra_root"
+
+        />
+    <menuitem
+            id = 'menu_Medicines'
+            name = 'Available Medicines'
+            parent = "menu_root_Medicines"
+            action = "action_medicine_views"
+        />
+</odoo>
