@@ -21,6 +21,15 @@ class Appointment(models.Model):
         ('cancelled','Cancelled'),
     ], default='new',string='State',required=True)
 
-    patient_id = fields.Many2one('hospital.patient', string='Patient',required=True)
+    patient_id = fields.Many2one('hospital.patient', string='Patient',required=True,domain=[('age','>=',50)])
     medicines_ids = fields.Many2many('hospital.medicine', string='Medicines')
 
+    appointment_fees = fields.Float(String='Appointment Fees')
+    x_ray_fees = fields.Float(String='X-Ray Fees')
+    chair_fees = fields.Float(String='Chair Fees')
+    total_price = fields.Float(string='Total Price',compute='_compute_total_price',store=True)
+
+    @api.depends('appointment_fees', 'x_ray_fees','chair_fees')
+    def _compute_total_price(self):
+        for appointment in self:
+            appointment.total_price = appointment.appointment_fees + appointment.x_ray_fees + appointment.chair_fees

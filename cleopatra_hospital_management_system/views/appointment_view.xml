@@ -15,7 +15,7 @@
                     </header>
                 <sheet string="Appointment">
                     <group>
-                        <group >
+                        <group string="Appointment Details">
                                 <field name="name"/>
                                 <field name="date"/>
                                 <field name="start_time"/>
@@ -23,6 +23,12 @@
                                 <field name="patient_id"/>
                                 <field name="medicines_ids" widget="many2many_tags"/>
 
+                        </group>
+                        <group string="FEES">
+                            <field name="appointment_fees"/>
+                            <field name="x_ray_fees"/>
+                            <field name="chair_fees"/>
+                            <field name="total_price"/>
                         </group>
                     </group>
                 </sheet>
